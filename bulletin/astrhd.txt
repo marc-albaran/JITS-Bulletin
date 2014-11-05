@@ -1,0 +1,42 @@
+class dbAdapter
+{
+}
+
+
+
+abstract class AbstractDatabase {
+
+public function connect($username, $password,  $port) {}
+public function reconnect() {}
+				getDatabase()
+				setDatabase($database)
+
+}
+
+
+interface DatabaseInterface {
+public function add()
+				edit()
+				delete()
+				update()
+}
+
+class mysql extends AbstractDatabase implements DatabaseInterface
+{
+	public function add() {
+	}
+} 
+
+class postgre extends AbstractDatabase implements DatabaseInterface
+{}
+
+
+class Book
+{
+	_construct(dbAdapter $dbadapter)
+	{ // }
+	
+	getDbAdapter()
+	
+	setDbAdapter(dbAdapter $dbadapter)
+}
