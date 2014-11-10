@@ -1,8 +1,15 @@
 <?php
 abstract class AbstractDatabase {
+	public $conn;
 	public $database ="JITS";
 	public $user ="Marckee";
 	public $password = "j0sephine";
+	
+	function connect(){}
+	function __construct(){
+		$this->connect();	
+	}
+	
 }
 
 interface DBInterface{
@@ -14,7 +21,7 @@ interface DBInterface{
 }
 
 class IBMDB2 extends AbstractDatabase implements DBInterface{
-	public $conn;
+	
 	function connect(){
 		$this->conn=db2_connect($this->database, $this->user, $this->password);
 	}
